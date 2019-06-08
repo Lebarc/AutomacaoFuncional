@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomacaoFuncional", "AutomacaoFuncional.csproj", "{C80264DA-15A3-4103-A0E0-354267389F82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomacaoFuncional", "AutomacaoFuncional\AutomacaoFuncional.csproj", "{198E75E9-D3F9-4F46-B91D-DAF6E9AEA1CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C80264DA-15A3-4103-A0E0-354267389F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C80264DA-15A3-4103-A0E0-354267389F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C80264DA-15A3-4103-A0E0-354267389F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C80264DA-15A3-4103-A0E0-354267389F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198E75E9-D3F9-4F46-B91D-DAF6E9AEA1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198E75E9-D3F9-4F46-B91D-DAF6E9AEA1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198E75E9-D3F9-4F46-B91D-DAF6E9AEA1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198E75E9-D3F9-4F46-B91D-DAF6E9AEA1CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D111C56F-1DE2-4868-9021-24D5A1140527}
+		SolutionGuid = {329BBB19-CB4D-44D4-A004-4CF7C7827774}
 	EndGlobalSection
 EndGlobal
