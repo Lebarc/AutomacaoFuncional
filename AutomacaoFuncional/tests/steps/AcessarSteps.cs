@@ -1,5 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using NUnit.Framework;
+using AutomacaoFuncional.tests.utils;
 
 namespace AutomacaoFuncional.tests.steps
 {
@@ -11,17 +12,13 @@ namespace AutomacaoFuncional.tests.steps
         [Given(@"Acesso o endereço ""(.*)""")]
         public void GivenAcessoOEndereco(string url)
         {
-            var result = pageActions.AcessarAplicacao(url);
-
-            Assert.True(result, "Erro ao acessar a URL -> " + url);
+            ClassInfo.GetInstance().ResultScenario = pageActions.AcessarAplicacao(url);
         }
 
         [Then(@"Aplicação e carregada com sucesso")]
         public void ThenAplicacaoECarregadaComSucesso()
         {
-            var result = pageActions.ValidarCarregamento();
-
-            Assert.True(result, "Erro ao acessar a endereço solicitado");
+            ClassInfo.GetInstance().ResultScenario = pageActions.ValidarCarregamento();
         }
     }
 }

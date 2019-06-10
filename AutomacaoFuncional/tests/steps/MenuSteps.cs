@@ -1,6 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using NUnit.Framework;
 using AutomacaoFuncional.tests.actions;
+using AutomacaoFuncional.tests.utils;
 
 namespace AutomacaoFuncional.tests.steps
 {
@@ -12,17 +13,13 @@ namespace AutomacaoFuncional.tests.steps
         [When(@"Clico em menu")]
         public void WhenClicoEmMenu()
         {
-            bool result = pageAction.ClicarBtMenu();
-
-            Assert.True(result, "Erro ao clicar no botão menu");
+            ClassInfo.GetInstance().ResultScenario = pageAction.ClicarBtMenu();
         }
 
         [Then(@"Deve apresentar as opções ""(.*)"" e ""(.*)""")]
         public void ThenDeveApresentarAsOpcoesE(string p0, string p1)
         {
-            bool result = pageAction.ValidarOpcoesMenu(p0, p1);
-
-            Assert.True(result, "Erro ao Apresentar as opções do menu");
+            ClassInfo.GetInstance().ResultScenario = pageAction.ValidarOpcoesMenu(p0, p1);
         }
 
     }

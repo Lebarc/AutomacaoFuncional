@@ -1,4 +1,5 @@
 ﻿using AutomacaoFuncional.tests.steps;
+using AutomacaoFuncional.tests.utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
@@ -9,7 +10,7 @@ using System.Threading;
 namespace AutomacaoFuncional.tests.actions
 {
     class MenuActions : MenuMap
-    {
+    {bool _result = false;
         ClassUtilities util = new ClassUtilities();
 
         public void Menu()
@@ -20,7 +21,6 @@ namespace AutomacaoFuncional.tests.actions
         public bool ClicarBtMenu()
         {
             bool _result = false;
-
             try
             {
                 Thread.Sleep(2000);
@@ -33,10 +33,14 @@ namespace AutomacaoFuncional.tests.actions
                     util.ClickJS(BtMenu);
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao clicar no botão menu!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -44,7 +48,6 @@ namespace AutomacaoFuncional.tests.actions
         public bool ValidarOpcoesMenu(string opt1, string opt2)
         {
             bool _result = false;
-
             try
             {
                 IWebElement Item1 = ClassDriver.GetInstance().Driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div/div/div/button[1]"));
@@ -55,10 +58,14 @@ namespace AutomacaoFuncional.tests.actions
                 {
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao apresentar as opções: "+opt1+" e "+opt2;
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }

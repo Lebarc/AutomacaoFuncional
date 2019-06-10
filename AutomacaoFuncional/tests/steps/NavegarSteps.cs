@@ -1,6 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using NUnit.Framework;
 using AutomacaoFuncional.tests.actions;
+using AutomacaoFuncional.tests.utils;
 
 namespace AutomacaoFuncional.tests.steps
 {
@@ -12,33 +13,25 @@ namespace AutomacaoFuncional.tests.steps
         [Given(@"Acesso a opção Navigation")]
         public void GivenAcessoAOpcao()
         {
-            bool result = pageAction.AcessarNavigation();
-
-            Assert.True(result, "Erro ao acessar a opção Navigation");
+            ClassInfo.GetInstance().ResultScenario = pageAction.AcessarNavigation();
         }
 
         [Given(@"Acesso a opção Menu")]
         public void GivenAcessoAOpcaoMenu()
         {
-            bool result = pageAction.AcessarOpcaoMenu();
-
-            Assert.True(result, "Erro ao acessar opção Menu");
+            ClassInfo.GetInstance().ResultScenario = pageAction.AcessarOpcaoMenu();
         }
 
         [Given(@"Acesso a opção Form Controls")]
         public void GivenAcessoAOpcaoFormControls()
         {
-            bool result = pageAction.AcessarOpcaoFormControls();
-
-            Assert.True(result, "Erro ao acessar opção Form Controls");
+            ClassInfo.GetInstance().ResultScenario = pageAction.AcessarOpcaoFormControls();
         }
 
         [Given(@"Acesso o submenu ""(.*)""")]
         public void GivenAcessoOSubmenu(string p0)
         {
-            bool result = pageAction.AcessarSubmenu(p0);
-
-            Assert.True(result, "Erro ao acessar o SubMenu "+ p0);
+            ClassInfo.GetInstance().ResultScenario = pageAction.AcessarSubmenu(p0);
         }
     }
 }

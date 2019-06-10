@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomacaoFuncional.tests.utils;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Threading;
@@ -24,7 +25,7 @@ namespace AutomacaoFuncional.tests.steps
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -42,12 +43,12 @@ namespace AutomacaoFuncional.tests.steps
                 }
                 else
                 {
-
+                    ClassInfo.GetInstance().LogMessage = "Erro ao acessar a aplicação!";
                 }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }

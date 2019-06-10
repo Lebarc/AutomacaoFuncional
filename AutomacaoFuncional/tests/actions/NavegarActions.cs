@@ -1,4 +1,5 @@
 ﻿using AutomacaoFuncional.tests.steps;
+using AutomacaoFuncional.tests.utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
@@ -38,17 +39,21 @@ namespace AutomacaoFuncional.tests.actions
                         OptFormControls.Click();
                         _result = true;
                     }
+                    else
+                    {
+                        ClassInfo.GetInstance().LogMessage = "Erro ao acessar a opção Form Controls!";
+                    }
                 }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
 
 
-        internal bool AcessarDatepicker()
+        public bool AcessarDatepicker()
         {
             bool _result = false;
 
@@ -63,16 +68,20 @@ namespace AutomacaoFuncional.tests.actions
                     OptDatepicker.Click();
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao acessar a opção Datepicker!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
 
 
-        internal bool AcessarInput()
+        public bool AcessarInput()
         {
             bool _result = false;
 
@@ -87,10 +96,14 @@ namespace AutomacaoFuncional.tests.actions
                     OptInput.Click();
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao acessar a opção Input!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -120,11 +133,15 @@ namespace AutomacaoFuncional.tests.actions
                         OptNavigation.Click();
                         _result = true;
                     }
+                    else
+                    {
+                        ClassInfo.GetInstance().LogMessage = "Erro ao acessar a opção Navigation!";
+                    }
                 }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -145,10 +162,14 @@ namespace AutomacaoFuncional.tests.actions
                     OptMenu.Click();
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao acessar a opção Menu!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -169,10 +190,14 @@ namespace AutomacaoFuncional.tests.actions
                     OptSelect.Click();
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao acessar a opção "+SubMenu;
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }

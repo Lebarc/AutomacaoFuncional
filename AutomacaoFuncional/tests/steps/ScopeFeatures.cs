@@ -1,4 +1,6 @@
-﻿using TechTalk.SpecFlow;
+﻿using AutomacaoFuncional.tests.utils;
+using NUnit.Framework;
+using TechTalk.SpecFlow;
 
 namespace AutomacaoFuncional.tests.steps
 {
@@ -32,13 +34,13 @@ namespace AutomacaoFuncional.tests.steps
         [AfterStep]
         public static void AfterStep()
         {
-          
+            Assert.True(ClassInfo.GetInstance().ResultScenario, ClassInfo.GetInstance().LogMessage, null);
         }
 
         [AfterScenario]
         public static void AfterScenario()
         {
-            
+            //Assert.True(ClassInfo.GetInstance().ResultScenario, ClassInfo.GetInstance().LogMessage, null);
         }
 
         [AfterFeature]

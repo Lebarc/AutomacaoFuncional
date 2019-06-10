@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutomacaoFuncional.tests.utils;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Threading;
@@ -29,10 +30,14 @@ namespace AutomacaoFuncional.tests.steps
                     Thread.Sleep(1000);
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao clicar no calendário!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -40,7 +45,6 @@ namespace AutomacaoFuncional.tests.steps
         public bool ValidarCalendario()
         {
             bool _result = false;
-
             try
             {
                 IWebElement ValidarCalendario = ClassDriver.GetInstance().Driver.FindElement(By.XPath("//*[@id='mat-datepicker-0']"));
@@ -49,13 +53,17 @@ namespace AutomacaoFuncional.tests.steps
                 Thread.Sleep(500);
                 if (ValidarCalendario.Displayed)
                 {
-                    _result = true;
                     ValidarCalendario.Click();
+                    _result = true;
+                }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao apresentar o calendário!";
                 }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -75,10 +83,14 @@ namespace AutomacaoFuncional.tests.steps
                     util.ClickJS(SelectOption);
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao selecionar a opção" +Option;
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -97,10 +109,14 @@ namespace AutomacaoFuncional.tests.steps
                     Thread.Sleep(500);
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao apresentar a mensagem com a opção "+Opcao+" selecioada!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -121,10 +137,14 @@ namespace AutomacaoFuncional.tests.steps
                     util.ClickJS(SelectAnOption);
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao clicar em Select An Option!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -145,10 +165,14 @@ namespace AutomacaoFuncional.tests.steps
                     InputEmail.SendKeys(email);
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao inserir o email!";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
@@ -166,10 +190,14 @@ namespace AutomacaoFuncional.tests.steps
                 {
                     _result = true;
                 }
+                else
+                {
+                    ClassInfo.GetInstance().LogMessage = "Erro ao apresentar a mensagem de email incorreto";
+                }
             }
             catch (Exception)
             {
-
+                ClassInfo.GetInstance().LogMessage = "Erro ao validar!";
             }
             return _result;
         }
