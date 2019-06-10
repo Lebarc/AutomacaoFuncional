@@ -60,7 +60,7 @@ namespace AutomacaoFuncional.tests.actions
                 }
                 else
                 {
-                    ClassInfo.GetInstance().LogMessage = "Erro ao apresentar as opções: "+opt1+" e "+opt2;
+                    ClassInfo.GetInstance().LogMessage = "Erro ao apresentar as opções: "+opt1+" e "+opt2+" !";
                 }
             }
             catch (Exception)
